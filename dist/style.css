@@ -1,0 +1,127 @@
+/**
+ * WP Book Theme
+ * Mobile First
+ */
+:root {
+  /**
+   * [Changeable Settings]
+   * These are meant for updating the font and
+   * background colour later in JavaScript.
+   */
+  --main-color: #415160;
+  --secondary-color: #fbfbf8;
+  --additional-color: #92928b;
+  --font-size: 1rem;
+  --line-height: 1.6rem;
+  --letter-spacing: 0rem;
+  --font-type: inherit;
+  /* FIXED SETTINGS */
+  /* [Colour Settings] */
+  --ink-blue: #415160;
+  --paper-white: #fbfbf8;
+  --drk-paper-white: #efefe7;
+  --brown-spot: #92928b;
+  /* [Font Settings] */
+  --reg-font-size: 1rem;
+  /* [Grid Settings] */
+  --grid-margin: 26px;
+  --grid-gutters: 9px;
+  --grid-column: 74px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--ink-blue);
+}
+
+header {
+  background: var(--drk-paper-white);
+}
+
+nav ul,
+#top-navbar ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 26px;
+}
+nav ul li,
+#top-navbar ul li {
+  list-style: none;
+  flex: 1 1 30%;
+  text-align: center;
+}
+nav ul li a,
+#top-navbar ul li a {
+  color: var(--ink-blue);
+  text-decoration: none;
+  font-size: var(--reg-font-size);
+  padding: 20px 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+h1 {
+  font-size: calc(var(--reg-font-size) * 2.3);
+}
+
+h2 {
+  font-size: calc(var(--reg-font-size) * 2);
+}
+
+h3 {
+  font-size: calc(var(--reg-font-size) * 1.7);
+}
+
+h4 {
+  font-size: calc(var(--reg-font-size) * 1.4);
+}
+
+h5 {
+  font-size: calc(var(--reg-font-size) * 1.1);
+}
+
+h6 {
+  font-size: calc(var(--reg-font-size) * 1);
+}
+
+.arrow-right svg {
+  stroke: var(--brown-spot);
+  fill: var(--brown-spot);
+}
+
+.arrow-left svg {
+  stroke: var(--brown-spot);
+  fill: var(--brown-spot);
+  transform: scale(-1, 1);
+}
+
+article,
+#chapter {
+  margin-left: var(--grid-margin);
+  margin-right: var(--grid-margin);
+}
+article h1,
+#chapter h1 {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: calc(var(--line-height) * 3);
+}
+article p,
+#chapter p {
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing);
+  font-family: var(--font-type);
+  color: var(--main-color);
+  margin-top: calc(var(--line-height) * 0.7);
+  text-align: justify;
+}
+article .footnote > sup,
+#chapter .footnote > sup {
+  font-size: calc(var(--reg-font-size) * 0.8);
+}

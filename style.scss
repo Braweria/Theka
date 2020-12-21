@@ -33,15 +33,6 @@
   --grid-column: 74px;
 }
 
-/**
- * @param   $a    Amount of Columns for the Grid (e.g. 4, 8 or 12)
- */
-@function column-width($a) {
-  $result: 100vw;
-  $result: $result - (2 * var(--grid-margin) - (($a - 1) * var(--grid-gutters)));
-  @return $result;
-}
-
 @mixin grid-margin {
   margin: {
     left: var(--grid-margin);
@@ -179,7 +170,44 @@ article,
     text-align: justify;
   }
 
-  .footnote > sup {
+  .has-footnote > sup {
     font-size: calc(var(--reg-font-size) * 0.8);
+  }
+
+  .footnote-note {
+    background-color: var(--ink-blue);
+    border-radius: var(--reg-font-size);
+    padding: var(--reg-font-size);
+
+    span {
+      color: var(--paper-white);
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    p {
+      color: var(--paper-white);
+      font-style: italic;
+    }
+  }
+
+  .info {
+    background: var(--drk-paper-white);
+    padding: var(--reg-font-size);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: .7rem;
+
+    span {
+      font-weight: 700;
+      font-style: italic;
+      flex: 1;
+    }
+
+    p {
+      font-style: italic;
+    }
   }
 }

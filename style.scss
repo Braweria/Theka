@@ -33,6 +33,22 @@
   --grid-column: 74px;
 }
 
+/**
+ * @param   $a    Amount of Columns for the Grid (e.g. 4, 8 or 12)
+ */
+@function column-width($a) {
+  $result: 100vw;
+  $result: $result - (2 * var(--grid-margin) - (($a - 1) * var(--grid-gutters)));
+  @return $result;
+}
+
+@mixin grid-margin {
+  margin: {
+    left: var(--grid-margin);
+    right: var(--grid-margin);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -100,30 +116,56 @@ h6 {
 @mixin arrow {
   stroke: var(--brown-spot);
   fill: var(--brown-spot);
+  width: var(--grid-column);
 }
 
-.arrow-right svg {
-  @include arrow;
+.next-prev-chapter-container {
+  @include grid-margin;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 50px;
+
+  a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
-.arrow-left svg {
-  @include arrow;
-  transform: scale(-1, 1);
+.arrow-right {
+  text-decoration: none;
+  width: 50%;
+  justify-content: flex-end;
+
+  svg {
+    @include arrow;
+  }
+}
+
+.arrow-left {
+  text-decoration: none;
+  width: 50%;
+  justify-content: flex-start;
+
+  svg {
+    @include arrow;
+    transform: scale(-1, 1);
+  }
 }
 
 article,
 #chapter {
-  margin: {
-    left: var(--grid-margin);
-    right: var(--grid-margin);
-  }
+  @include grid-margin;
 
   h1 {
     font-weight: 700;
     text-align: center;
     margin-bottom: calc(var(--line-height) * 3);
   }
-  
 
   p {
     font-size: var(--font-size);
@@ -139,6 +181,5 @@ article,
 
   .footnote > sup {
     font-size: calc(var(--reg-font-size) * 0.8);
-
   }
 }

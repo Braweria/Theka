@@ -29,6 +29,9 @@
   --grid-column: 74px;
 }
 
+/**
+ * @param   $a    Amount of Columns for the Grid (e.g. 4, 8 or 12)
+ */
 * {
   margin: 0;
   padding: 0;
@@ -89,14 +92,41 @@ h6 {
   font-size: calc(var(--reg-font-size) * 1);
 }
 
+.next-prev-chapter-container {
+  margin-left: var(--grid-margin);
+  margin-right: var(--grid-margin);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+.next-prev-chapter-container a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.arrow-right {
+  text-decoration: none;
+  width: 50%;
+  justify-content: flex-end;
+}
 .arrow-right svg {
   stroke: var(--brown-spot);
   fill: var(--brown-spot);
+  width: var(--grid-column);
 }
 
+.arrow-left {
+  text-decoration: none;
+  width: 50%;
+  justify-content: flex-start;
+}
 .arrow-left svg {
   stroke: var(--brown-spot);
   fill: var(--brown-spot);
+  width: var(--grid-column);
   transform: scale(-1, 1);
 }
 

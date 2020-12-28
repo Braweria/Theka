@@ -11,20 +11,36 @@ function onDoubleTap(element, func, alsoDblClick = false) {
     }
     func(e);
   }
-  element.addEventListener('touchstart', handleTap, false);
+  element.addEventListener('touchend', handleTap, false);
 
   if (alsoDblClick) {
     element.addEventListener('dblclick', func, false);
   }
 
   return () => {
-    element.removeEventListener('touchstart', handleTap);
+    element.removeEventListener('touchend', handleTap);
     if (alsoDblClick) {
       element.removeEventListener('dblclick', func);
     }
   }
 }
 
+const fontSettings = document.getElementById("font-settings");
+let boolFontSettings = false;
+
 onDoubleTap(chapter, e => {
-  console.log("double tap that");
+  fontSettings.classList.add("show-flex");
+  boolFontSettings = true;
+});
+
+
+window.addEventListener("touchstart", (e) => {
+  if (boolFontSettings) {
+    const boolInside = e.path.includes(fontSettings);
+    if (boolInside) {
+      // do something
+    } else {
+      fontSettings.classList.remove("show-flex");
+    }
+  }
 });

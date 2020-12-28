@@ -272,3 +272,47 @@ article,
     }
   }
 }
+
+#comment-section {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+footer,
+#footer {
+  padding: var(--grid-margin);
+  background: var(--drk-paper-white);
+
+  nav {
+    @include navbar-td;
+  }
+
+  #footer-navbar {
+    a {
+      margin: {
+        bottom: 1em;
+      }
+    }
+  }
+
+  #footer-important-navbar {
+    margin: {
+      top: 3em;
+    }
+
+    a {
+      font-size: var(--sm-font-size);
+    }
+  }
+
+  #copyright-notice {
+    font-size: var(--xs-font-size);
+    text-align: center;
+    width: 50%;
+    margin: auto;
+  }
+}

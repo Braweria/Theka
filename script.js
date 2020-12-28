@@ -1,6 +1,6 @@
 const chapter = document.getElementById("chapter");
 
-function onDoubleTap(element, func) {
+function onDoubleTap(element, func, alsoDblClick = false) {
   let recentTap = false;
 
   function handleTap(e) {
@@ -11,9 +11,18 @@ function onDoubleTap(element, func) {
     }
     func(e);
   }
-  element.addEventListener("touchstart", handleTap, false);
+  element.addEventListener('touchstart', handleTap, false);
 
-  return () => element.removeEventListener("touchstart", handleTap);
+  if (alsoDblClick) {
+    element.addEventListener('dblclick', func, false);
+  }
+
+  return () => {
+    element.removeEventListener('touchstart', handleTap);
+    if (alsoDblClick) {
+      element.removeEventListener('dblclick', func);
+    }
+  }
 }
 
 onDoubleTap(chapter, e => {

@@ -180,33 +180,32 @@ h6 {
   flex-wrap: wrap;
   justify-content: space-between;
 
-  button {
-    appearance: none;
-    border: none;
-    outline: none;
-
-    margin: var(--grid-gutters);
-    border-radius: var(--reg-font-size);
-    background-color: var(--paper-white);
-
+  .square {
+    position: relative;
+    flex: 1 1 20%;
+    margin: calc((100% - (20% * 4)) / 8);
     
-    width: 20%;
-
-    font-size: var(--reg-font-size);
-    font-weight: 700;
-
-    &:nth-last-child(1) {
-      width: 100%;
-    }
-
-    &::after {
-      padding-bottom: 100%;
+    &::before {
       content: "";
       display: block;
+      padding-top: 100%;
     }
 
-    &:hover {
-      box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.15);
+    &:last-child::before {
+      padding-top: calc(22.5%);
+    }
+
+    button,
+    select {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+
+      &:hover {
+        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.15);
+      }
     }
   }
 }

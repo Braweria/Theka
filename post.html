@@ -7,7 +7,7 @@
   <title>Titel</title>
 
   <link rel="stylesheet" href="dist/style.css">
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -45,15 +45,21 @@
   </div>
 
 <div id="font-settings">
-  <button id="fs-font-down">A</button>
-  <button id="fs-font-up">A</button>
-  <button id="fs-line-down">A</button>
-  <button id="fs-line-up">A</button>
-  <button id="fs-spacing-down">A</button>
-  <button id="fs-spacing-up">A</button>
-  <button id="fs-width-down">A</button>
-  <button id="fs-width-up">A</button>
-  <button id="fs-font-selection">A</button>
+  <div class="square"><button id="fs-font-down">A</button></div>
+  <div class="square"><button id="fs-font-up">A</button></div>
+  <div class="square"><button id="fs-line-down">A</button></div>
+  <div class="square"><button id="fs-line-up">A</button></div>
+  <div class="square"><button id="fs-spacing-down">A</button></div>
+  <div class="square"><button id="fs-spacing-up">A</button></div>
+  <div class="square"><button id="fs-width-down">A</button></div>
+  <div class="square"><button id="fs-width-up">A</button></div>
+  <div class="square"><select id="fs-font-selection">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select></div>
 </div>
 
   <article id="chapter">

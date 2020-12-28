@@ -168,6 +168,47 @@ h6 {
   }
 }
 
+#font-settings {
+  @include grid-margin;
+  background-color: var(--ink-blue);
+  padding: var(--reg-font-size);
+  border-radius: var(--reg-font-size);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  button {
+    appearance: none;
+    border: none;
+    outline: none;
+
+    margin: var(--grid-gutters);
+    border-radius: var(--reg-font-size);
+    background-color: var(--paper-white);
+
+    
+    width: 20%;
+
+    font-size: var(--reg-font-size);
+    font-weight: 700;
+
+    &:nth-last-child(1) {
+      width: 100%;
+    }
+
+    &::after {
+      padding-bottom: 100%;
+      content: "";
+      display: block;
+    }
+
+    &:hover {
+      box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
 article,
 #chapter {
   @include grid-margin;

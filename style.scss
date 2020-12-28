@@ -25,6 +25,8 @@
   --brown-spot: #92928b;
 
   /* [Font Settings] */
+  --xs-font-size: 0.6rem;
+  --sm-font-size: 0.8rem;
   --reg-font-size: 1rem;
 
   /* [Grid Settings] */
@@ -259,7 +261,7 @@ article,
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
-    border-radius: .7rem;
+    border-radius: 0.7rem;
 
     span {
       font-weight: 700;

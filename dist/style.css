@@ -135,10 +135,13 @@ h6 {
   background-color: var(--ink-blue);
   padding: var(--reg-font-size);
   border-radius: var(--reg-font-size);
-  display: flex;
+  display: none;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  width: calc(100% - var(--grid-margin) * 2);
+  position: fixed;
+  top: 30%;
 }
 #font-settings .square {
   position: relative;
@@ -160,6 +163,14 @@ h6 {
   left: 0;
   height: 100%;
   width: 100%;
+  border-radius: 10px;
+  appearance: none;
+  border: none;
+  background: var(--paper-white);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 #font-settings .square button:hover,
 #font-settings .square select:hover {
@@ -275,4 +286,11 @@ footer #copyright-notice,
   text-align: center;
   width: 50%;
   margin: auto;
+}
+
+/**
+ * Changeable Classes
+ */
+.show-flex {
+  display: flex !important;
 }

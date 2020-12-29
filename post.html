@@ -2,11 +2,11 @@
 <html lang="de">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Titel</title>
 
-  <link rel="stylesheet" href="dist/style.css">
+  <link rel="stylesheet" href="dist/style.css" />
   <script src="script.js" defer></script>
 </head>
 
@@ -23,56 +23,77 @@
 
   <div class="next-prev-chapter-container">
     <a class="arrow-left" href="#">
-
       <svg xmlns="http://www.w3.org/2000/svg" width="75" height="20" viewBox="0 0 75 20">
         <g transform="translate(-2050.5 -47.457)">
           <line x1="66" transform="translate(2050.5 57.438)" stroke-width="3" />
           <path d="M10,0,20,12.074H0Z" transform="translate(2125.5 47.457) rotate(90)" />
         </g>
       </svg>
-
     </a>
     <a class="arrow-right" href="#">
-
       <svg xmlns="http://www.w3.org/2000/svg" width="75" height="20" viewBox="0 0 75 20">
         <g transform="translate(-2050.5 -47.457)">
           <line x1="66" transform="translate(2050.5 57.438)" stroke-width="3" />
           <path d="M10,0,20,12.074H0Z" transform="translate(2125.5 47.457) rotate(90)" />
         </g>
       </svg>
-
     </a>
   </div>
 
   <div id="font-settings">
-
     <!-- Wenn ich mit PHP arbeite, sollte ich die Icons
   anders einbinden und nicht mit einem IMG tag
   https://css-tricks.com/svg-sprites-use-better-icon-fonts/ -->
 
-    <div class="square"><button id="fs-font-down"><img src="assets/images/icons/letter_WP_Book.svg" height="15px"
-          alt=""></button></div>
-    <div class="square"><button id="fs-font-up"><img src="assets/images/icons/letter_WP_Book.svg" height="35px"
-          alt=""></button></div>
-    <div class="square"><button id="fs-line-down"><img src="assets/images/icons/line-down_WP_Book.svg" height="25px"
-          alt=""></button></div>
-    <div class="square"><button id="fs-line-up"><img src="assets/images/icons/line-up_WP_Book.svg" height="25px"
-          alt=""></button></div>
-    <div class="square"><button id="fs-spacing-down"><img src="assets/images/icons/spacing-down_WP_Book.svg"
-          height="25px" alt=""></button></div>
-    <div class="square"><button id="fs-spacing-up"><img src="assets/images/icons/spacing-up_WP_Book.svg" height="25px"
-          alt=""></button></div>
-    <div class="square"><button id="fs-width-down"><img src="assets/images/icons/width-down_WP_Book.svg" height="25px"
-          alt=""></button></div>
-    <div class="square"><button id="fs-width-up"><img src="assets/images/icons/width-up_WP_Book.svg" height="25px"
-          alt=""></button></div>
-    <div class="square"><select id="fs-font-selection">
+    <div class="square">
+      <button id="fs-font-down">
+        <img src="assets/images/icons/letter_WP_Book.svg" height="15px" alt="" />
+      </button>
+    </div>
+    <div class="square">
+      <button id="fs-font-up">
+        <img src="assets/images/icons/letter_WP_Book.svg" height="35px" alt="" />
+      </button>
+    </div>
+    <div class="square">
+      <button id="fs-line-down">
+        <img src="assets/images/icons/line-down_WP_Book.svg" height="25px" alt="" />
+      </button>
+    </div>
+    <div class="square">
+      <button id="fs-line-up">
+        <img src="assets/images/icons/line-up_WP_Book.svg" height="25px" alt="" />
+      </button>
+    </div>
+    <div class="square">
+      <button id="fs-spacing-down">
+        <img src="assets/images/icons/spacing-down_WP_Book.svg" height="25px" alt="" />
+      </button>
+    </div>
+    <div class="square">
+      <button id="fs-spacing-up">
+        <img src="assets/images/icons/spacing-up_WP_Book.svg" height="25px" alt="" />
+      </button>
+    </div>
+    <div class="square">
+      <button id="fs-width-down">
+        <img src="assets/images/icons/width-down_WP_Book.svg" height="25px" alt="" />
+      </button>
+    </div>
+    <div class="square">
+      <button id="fs-width-up">
+        <img src="assets/images/icons/width-up_WP_Book.svg" height="25px" alt="" />
+      </button>
+    </div>
+    <div class="square">
+      <select id="fs-font-selection">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
         <option value="5">5</option>
-      </select></div>
+      </select>
+    </div>
   </div>
 
   <article id="chapter">
@@ -82,99 +103,118 @@
       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7">
         <path d="M6,0l6,7H0Z" transform="translate(12 7) rotate(180)" fill="#415160" />
       </svg>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit quas quisquam expedita! Temporibus, maiores
-        tenetur. Eveniet quis dolore itaque autem inventore porro temporibus, cum aspernatur placeat accusamus
-        voluptatem repellendus nesciunt.</p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit quas
+        quisquam expedita! Temporibus, maiores tenetur. Eveniet quis dolore
+        itaque autem inventore porro temporibus, cum aspernatur placeat
+        accusamus voluptatem repellendus nesciunt.
+      </p>
     </div>
-    <p class="has-footnote">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti aliquam officia optio
-      tempora
-      fuga hic suscipit
-      maxime eius a corrupti accusamus ex at nobis cumque impedit, quae quod dolor consequuntur!
-      Ab nihil optio dolor earum, debitis rerum vitae quidem illum sint quibusdam! Impedit sint quia, laboriosam beatae
-      officiis exercitationem veritatis esse in id numquam deserunt, omnis ipsum error iusto dolor!
-      Enim adipisci id accusantium officiis a aliquam reiciendis non impedit, odit recusandae culpa ex explicabo
-      possimus voluptas facere officia.<sup>[1]</sup></p>
+    <p class="has-footnote">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+      aliquam officia optio tempora fuga hic suscipit maxime eius a corrupti
+      accusamus ex at nobis cumque impedit, quae quod dolor consequuntur! Ab
+      nihil optio dolor earum, debitis rerum vitae quidem illum sint
+      quibusdam! Impedit sint quia, laboriosam beatae officiis exercitationem
+      veritatis esse in id numquam deserunt, omnis ipsum error iusto dolor!
+      Enim adipisci id accusantium officiis a aliquam reiciendis non impedit,
+      odit recusandae culpa ex explicabo possimus voluptas facere officia.<sup>[1]</sup>
+    </p>
     <div class="footnote-note">
       <span>[1]: Footnote</span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam consequatur, minus soluta tenetur at aliquid
-        possimus provident velit doloribus quibusdam eligendi suscipit deserunt vel quae ea cum ut necessitatibus
-        corrupti.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam
+        consequatur, minus soluta tenetur at aliquid possimus provident velit
+        doloribus quibusdam eligendi suscipit deserunt vel quae ea cum ut
+        necessitatibus corrupti.
+      </p>
     </div>
     <p>
-      Explicabo consectetur quas commodi architecto aut facere corrupti suscipit doloribus ipsum doloremque illo
-      tenetur, atque incidunt alias culpa voluptas magnam reiciendis ut repellat, molestias voluptatem itaque dolor quia
-      cupiditate? Tenetur!
-      Vero dolorem harum expedita quam, et ex impedit illo ipsam nobis esse corporis at aspernatur tempora iure mollitia
-      minima nisi ullam repellendus eaque! Quidem ullam animi non vitae harum ad!
-      Voluptates excepturi eligendi enim nesciunt quod molestiae iure ea reprehenderit voluptatum libero, amet eius
-      temporibus minima mollitia perferendis. Provident sunt deleniti placeat nulla nobis ad minima maxime pariatur eos
-      voluptatibus!
-      Nostrum harum consequuntur voluptate, laboriosam perferendis.</p>
-    <p>maxime necessitatibus eos dolorum nobis minus! Aspernatur illum corporis similique quis earum eligendi quidem
-      aliquam quasi ipsa ad labore, dolor inventore omnis dolorum.
-      Nemo neque ut perspiciatis voluptas itaque harum excepturi quaerat, obcaecati laboriosam repellat illum quidem!
-      Cumque velit laboriosam rerum fugit. Aliquam adipisci provident delectus assumenda labore nesciunt. Sapiente
-      beatae assumenda quidem.
-      Consequuntur perferendis voluptatum doloremque assumenda ipsam quae ea veritatis illo repellendus minus saepe cum,
-      earum eveniet culpa perspiciatis quia est impedit at debitis, explicabo laudantium! Atque voluptatibus praesentium
-      non. Architecto.
-      Ratione consectetur mollitia et assumenda debitis maiores id impedit nemo sed iste provident, voluptatem, tenetur
-      veniam. Commodi dolores id quo explicabo. Rem non id voluptas blanditiis, itaque facilis? Asperiores, suscipit.
-      Delectus dolor necessitatibus eveniet non neque similique vitae deserunt doloribus quia ratione pariatur
-      doloremque nihil, consequatur tempora autem quas dicta accusamus? Pariatur ratione aut magnam architecto odit
-      nulla officia ipsum?
-      Voluptatibus laudantium cumque obcaecati alias blanditiis? Accusamus officia optio facilis quasi ad id
-      necessitatibus vel repellendus sunt a quos autem dolor blanditiis esse maxime officiis ratione, veniam odit
-      eligendi placeat.
-      Ex impedit beatae error eius voluptatem laboriosam reprehenderit, dolore vel deserunt minus, aspernatur tenetur,
-      odit blanditiis accusamus voluptates inventore illo dicta! Ut minus beatae, nobis ipsum sapiente labore illo
-      tenetur!
-      Cumque inventore tempora in saepe quasi! Reiciendis ex numquam dicta, nam aliquam molestias adipisci nemo maiores
-      eveniet sint, eius doloremque a facere provident suscipit aliquid itaque iure minus perferendis dignissimos!
-      Sed optio sint et facere omnis explicabo excepturi doloremque adipisci ipsa nisi a itaque consequuntur illo ea
-      quaerat impedit nobis, dolorem odio est distinctio repudiandae laboriosam minus. Beatae, iste nulla?
-      Blanditiis modi nisi deleniti accusantium veritatis.</p>
-    <p>aut illo amet consequuntur quisquam praesentium quam nesciunt voluptas dolor, officia cumque iste assumenda quas
-      et vero ut sequi vel facilis consequatur? Veritatis, aliquam?
-      Beatae alias, hic cum perspiciatis aliquid, eveniet sit rerum temporibus ut cumque officia mollitia architecto,
-      dignissimos sint non explicabo blanditiis consectetur eum nam asperiores ipsum odio quisquam provident et?
-      Reprehenderit?
-      Labore, vero distinctio eius sapiente odit sunt eligendi quae expedita quas ut nam reprehenderit omnis reiciendis
-      ea quisquam id consequuntur voluptatibus libero assumenda, provident at quos tempora ad. Unde, illum!
-      Excepturi maiores corrupti provident nam voluptas ut ratione modi cum suscipit beatae blanditiis error aut
-      repellendus tempore, illum sequi obcaecati dolor quibusdam culpa adipisci explicabo fugit. Iure debitis velit
-      sint?
-      Vitae maiores officiis porro praesentium repellendus minima? Sapiente deserunt sed voluptates ipsam et nulla
-      temporibus dolores quo repellat, illum asperiores dignissimos! Consequuntur quaerat, id maiores cumque adipisci
-      molestias nostrum placeat.</p>
+      Explicabo consectetur quas commodi architecto aut facere corrupti
+      suscipit doloribus ipsum doloremque illo tenetur, atque incidunt alias
+      culpa voluptas magnam reiciendis ut repellat, molestias voluptatem
+      itaque dolor quia cupiditate? Tenetur! Vero dolorem harum expedita quam,
+      et ex impedit illo ipsam nobis esse corporis at aspernatur tempora iure
+      mollitia minima nisi ullam repellendus eaque! Quidem ullam animi non
+      vitae harum ad! Voluptates excepturi eligendi enim nesciunt quod
+      molestiae iure ea reprehenderit voluptatum libero, amet eius temporibus
+      minima mollitia perferendis. Provident sunt deleniti placeat nulla nobis
+      ad minima maxime pariatur eos voluptatibus! Nostrum harum consequuntur
+      voluptate, laboriosam perferendis.
+    </p>
+    <p>
+      maxime necessitatibus eos dolorum nobis minus! Aspernatur illum corporis
+      similique quis earum eligendi quidem aliquam quasi ipsa ad labore, dolor
+      inventore omnis dolorum. Nemo neque ut perspiciatis voluptas itaque
+      harum excepturi quaerat, obcaecati laboriosam repellat illum quidem!
+      Cumque velit laboriosam rerum fugit. Aliquam adipisci provident delectus
+      assumenda labore nesciunt. Sapiente beatae assumenda quidem.
+      Consequuntur perferendis voluptatum doloremque assumenda ipsam quae ea
+      veritatis illo repellendus minus saepe cum, earum eveniet culpa
+      perspiciatis quia est impedit at debitis, explicabo laudantium! Atque
+      voluptatibus praesentium non. Architecto. Ratione consectetur mollitia
+      et assumenda debitis maiores id impedit nemo sed iste provident,
+      voluptatem, tenetur veniam. Commodi dolores id quo explicabo. Rem non id
+      voluptas blanditiis, itaque facilis? Asperiores, suscipit. Delectus
+      dolor necessitatibus eveniet non neque similique vitae deserunt
+      doloribus quia ratione pariatur doloremque nihil, consequatur tempora
+      autem quas dicta accusamus? Pariatur ratione aut magnam architecto odit
+      nulla officia ipsum? Voluptatibus laudantium cumque obcaecati alias
+      blanditiis? Accusamus officia optio facilis quasi ad id necessitatibus
+      vel repellendus sunt a quos autem dolor blanditiis esse maxime officiis
+      ratione, veniam odit eligendi placeat. Ex impedit beatae error eius
+      voluptatem laboriosam reprehenderit, dolore vel deserunt minus,
+      aspernatur tenetur, odit blanditiis accusamus voluptates inventore illo
+      dicta! Ut minus beatae, nobis ipsum sapiente labore illo tenetur! Cumque
+      inventore tempora in saepe quasi! Reiciendis ex numquam dicta, nam
+      aliquam molestias adipisci nemo maiores eveniet sint, eius doloremque a
+      facere provident suscipit aliquid itaque iure minus perferendis
+      dignissimos! Sed optio sint et facere omnis explicabo excepturi
+      doloremque adipisci ipsa nisi a itaque consequuntur illo ea quaerat
+      impedit nobis, dolorem odio est distinctio repudiandae laboriosam minus.
+      Beatae, iste nulla? Blanditiis modi nisi deleniti accusantium veritatis.
+    </p>
+    <p>
+      aut illo amet consequuntur quisquam praesentium quam nesciunt voluptas
+      dolor, officia cumque iste assumenda quas et vero ut sequi vel facilis
+      consequatur? Veritatis, aliquam? Beatae alias, hic cum perspiciatis
+      aliquid, eveniet sit rerum temporibus ut cumque officia mollitia
+      architecto, dignissimos sint non explicabo blanditiis consectetur eum
+      nam asperiores ipsum odio quisquam provident et? Reprehenderit? Labore,
+      vero distinctio eius sapiente odit sunt eligendi quae expedita quas ut
+      nam reprehenderit omnis reiciendis ea quisquam id consequuntur
+      voluptatibus libero assumenda, provident at quos tempora ad. Unde,
+      illum! Excepturi maiores corrupti provident nam voluptas ut ratione modi
+      cum suscipit beatae blanditiis error aut repellendus tempore, illum
+      sequi obcaecati dolor quibusdam culpa adipisci explicabo fugit. Iure
+      debitis velit sint? Vitae maiores officiis porro praesentium repellendus
+      minima? Sapiente deserunt sed voluptates ipsam et nulla temporibus
+      dolores quo repellat, illum asperiores dignissimos! Consequuntur
+      quaerat, id maiores cumque adipisci molestias nostrum placeat.
+    </p>
   </article>
 
   <div class="next-prev-chapter-container">
     <a class="arrow-left" href="#">
-
       <svg xmlns="http://www.w3.org/2000/svg" width="75" height="20" viewBox="0 0 75 20">
         <g transform="translate(-2050.5 -47.457)">
           <line x1="66" transform="translate(2050.5 57.438)" stroke-width="3" />
           <path d="M10,0,20,12.074H0Z" transform="translate(2125.5 47.457) rotate(90)" />
         </g>
       </svg>
-
     </a>
     <a class="arrow-right" href="#">
-
       <svg xmlns="http://www.w3.org/2000/svg" width="75" height="20" viewBox="0 0 75 20">
         <g transform="translate(-2050.5 -47.457)">
           <line x1="66" transform="translate(2050.5 57.438)" stroke-width="3" />
           <path d="M10,0,20,12.074H0Z" transform="translate(2125.5 47.457) rotate(90)" />
         </g>
       </svg>
-
     </a>
   </div>
 
   <section id="comment-section">
-    *************
-    kommentare werden hier sein, muss aber noch designed werden
+    ************* kommentare werden hier sein, muss aber noch designed werden
     *************
   </section>
 
@@ -193,9 +233,11 @@
         <li><a href="#">Privacy Policy</a></li>
       </ul>
     </nav>
-    <p id="copyright-notice">WP Book Theme designed and developed by Wiktoria (Braweria) Mielcarek (c) 2020</p>
+    <p id="copyright-notice">
+      WP Book Theme designed and developed by Wiktoria (Braweria) Mielcarek
+      (c) 2020
+    </p>
   </footer>
-
 </body>
 
 </html>

@@ -1,6 +1,10 @@
 "use strict";
 
 var chapter = document.getElementById("chapter");
+/**
+ * Checks if there was a double tap
+ * or double click
+ */
 
 function onDoubleTap(element, func) {
   var alsoDblClick = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;

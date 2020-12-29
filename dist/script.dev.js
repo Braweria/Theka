@@ -36,6 +36,12 @@ function onDoubleTap(element, func) {
     }
   };
 }
+/**
+ * Listen if User tapped outside the Font Settings
+ *
+ * @return      Remove class .show-flex from #font-settings
+ */
+
 
 var fontSettings = document.getElementById("font-settings");
 var boolFontSettings = false;

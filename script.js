@@ -29,6 +29,11 @@ function onDoubleTap(element, func, alsoDblClick = false) {
   }
 }
 
+/**
+ * Listen if User tapped outside the Font Settings
+ *
+ * @return      Remove class .show-flex from #font-settings
+ */
 const fontSettings = document.getElementById("font-settings");
 let boolFontSettings = false;
 
@@ -36,7 +41,6 @@ onDoubleTap(chapter, e => {
   fontSettings.classList.add("show-flex");
   boolFontSettings = true;
 });
-
 
 window.addEventListener("touchstart", (e) => {
   if (boolFontSettings) {

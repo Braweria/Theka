@@ -1,5 +1,9 @@
 const chapter = document.getElementById("chapter");
 
+/**
+ * Checks if there was a double tap
+ * or double click
+ */
 function onDoubleTap(element, func, alsoDblClick = false) {
   let recentTap = false;
 

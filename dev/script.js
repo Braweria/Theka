@@ -1,5 +1,7 @@
 const chapter = document.getElementById("chapter");
 
+import "./style.scss";
+
 /**
  * Checks if there was a double tap
  * or double click
@@ -10,23 +12,23 @@ function onDoubleTap(element, func, alsoDblClick = false) {
   function handleTap(e) {
     if (!recentTap) {
       recentTap = true;
-      setTimeout(() => recentTap = false, 500);
+      setTimeout(() => (recentTap = false), 500);
       return;
     }
     func(e);
   }
-  element.addEventListener('touchend', handleTap, false);
+  element.addEventListener("touchend", handleTap, false);
 
   if (alsoDblClick) {
-    element.addEventListener('dblclick', func, false);
+    element.addEventListener("dblclick", func, false);
   }
 
   return () => {
-    element.removeEventListener('touchend', handleTap);
+    element.removeEventListener("touchend", handleTap);
     if (alsoDblClick) {
-      element.removeEventListener('dblclick', func);
+      element.removeEventListener("dblclick", func);
     }
-  }
+  };
 }
 
 /**
@@ -37,7 +39,7 @@ function onDoubleTap(element, func, alsoDblClick = false) {
 const fontSettings = document.getElementById("font-settings");
 let boolFontSettings = false;
 
-onDoubleTap(chapter, e => {
+onDoubleTap(chapter, (e) => {
   fontSettings.classList.add("show-flex");
   boolFontSettings = true;
 });

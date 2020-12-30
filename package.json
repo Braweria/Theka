@@ -1,0 +1,15 @@
+{
+  "name": "wp_book_theme",
+  "version": "1.0.0",
+  "description": "A book theme for WordPress.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wiktoria (Braweria)",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.0"
+  }
+}

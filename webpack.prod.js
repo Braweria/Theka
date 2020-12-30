@@ -10,7 +10,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 module.exports = merge(common, {
   mode: "production",
   output: {
-    filename: "script.[contenthash].js",
+    filename: "script.js",
     path: path.resolve(__dirname, "prod"),
     publicPath: "./",
   },
@@ -29,7 +29,7 @@ module.exports = merge(common, {
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: "[name].[contenthash].css" }),
+    new MiniCssExtractPlugin({ filename: "style.css" }),
     new CleanWebpackPlugin(),
   ],
   module: {

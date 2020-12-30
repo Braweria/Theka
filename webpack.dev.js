@@ -10,5 +10,6 @@ module.exports = merge(common, {
   output: {
     filename: "script.dev.js",
     path: path.resolve(__dirname, "dist"),
+    publicPath: "./",
   },
 });

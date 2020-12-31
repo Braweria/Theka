@@ -275,11 +275,19 @@ article,
     align-items: center;
     flex-wrap: wrap;
     border-radius: 0.7rem;
+    margin: {
+      top: var(--reg-font-size);
+      bottom: var(--reg-font-size);
+    }
 
     span {
       font-weight: 700;
       font-style: italic;
       flex: 1;
+    }
+
+    .info-text {
+      display: none;
     }
 
     p {
@@ -338,4 +346,8 @@ footer,
 
 .show-flex {
   display: flex !important;
+}
+
+.show-block {
+  display: block !important;
 }

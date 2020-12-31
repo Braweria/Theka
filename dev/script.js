@@ -3,8 +3,7 @@ const chapter = document.getElementById("chapter");
 import "./style.scss";
 
 /**
- * Checks if there was a double tap
- * or double click
+ * Checks if there was a double tap or double click
  */
 function onDoubleTap(element, func, alsoDblClick = false) {
   let recentTap = false;
@@ -53,4 +52,18 @@ window.addEventListener("touchstart", (e) => {
       fontSettings.classList.remove("show-flex");
     }
   }
+});
+
+const infoBox = Array.from(document.querySelectorAll(".info-box"));
+
+console.log(infoBox);
+
+chapter.addEventListener("click", (e) => {
+  infoBox.forEach((box) => {
+    const boolIsInfoBox = e.path.includes(box);
+    if (boolIsInfoBox) {
+      const infoText = box.querySelector(".info-text");
+      infoText.classList.toggle("show-block");
+    }
+  });
 });

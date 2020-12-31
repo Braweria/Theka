@@ -74,3 +74,18 @@ chapter.addEventListener("click", (e) => {
     }
   });
 });
+
+const hasFootnote = Array.from(document.querySelectorAll(".has-footnote"));
+
+
+chapter.addEventListener("click", (e) => {
+  hasFootnote.forEach(footnote => {
+    const boolIsFootnote = e.path.includes(footnote);
+    console.log(footnote)
+
+    if (boolIsFootnote) {
+      const footnoteNote = footnote.querySelector(".footnote-note");
+      footnoteNote.classList.toggle("show-block");
+    }
+  })
+})

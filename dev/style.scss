@@ -246,24 +246,21 @@ article,
     text-align: justify;
   }
 
-  .has-footnote > sup {
-    font-size: calc(var(--reg-font-size) * 0.8);
+  .has-footnote > .footnote-indicator > svg {
+    width: 8px;
+    fill: var(--ink-blue);
   }
 
   .footnote-note {
     background-color: var(--ink-blue);
     border-radius: var(--reg-font-size);
     padding: var(--reg-font-size);
-
-    span {
-      color: var(--paper-white);
-      font-weight: 500;
-      font-style: italic;
-    }
+    display: none;
 
     p {
       color: var(--paper-white);
       font-style: italic;
+      margin: 0;
     }
   }
 

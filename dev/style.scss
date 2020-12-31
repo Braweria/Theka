@@ -256,12 +256,8 @@ article,
     border-radius: var(--reg-font-size);
     padding: var(--reg-font-size);
     display: none;
-
-    p {
-      color: var(--paper-white);
-      font-style: italic;
-      margin: 0;
-    }
+    color: var(--paper-white);
+    font-style: italic;
   }
 
   .info-box {

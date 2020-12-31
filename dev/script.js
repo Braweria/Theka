@@ -75,17 +75,22 @@ chapter.addEventListener("click", (e) => {
   });
 });
 
+/**
+ * Makes the Footnote collapseable
+ *
+ * @param   {HtmlElement}   footnote        Single Item of hasFootnote
+ * @param   {Bool}          boolIsFootnote  Checks if clicked area is a footnote
+ */
 const hasFootnote = Array.from(document.querySelectorAll(".has-footnote"));
 
-
 chapter.addEventListener("click", (e) => {
-  hasFootnote.forEach(footnote => {
+  hasFootnote.forEach((footnote) => {
     const boolIsFootnote = e.path.includes(footnote);
-    console.log(footnote)
+    console.log(footnote);
 
     if (boolIsFootnote) {
       const footnoteNote = footnote.querySelector(".footnote-note");
       footnoteNote.classList.toggle("show-block");
     }
-  })
-})
+  });
+});

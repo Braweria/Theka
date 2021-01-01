@@ -85,7 +85,6 @@ const hasFootnote = Array.from(document.querySelectorAll(".has-footnote"));
 chapter.addEventListener("click", (e) => {
   hasFootnote.forEach((footnote) => {
     const boolIsFootnote = e.path.includes(footnote);
-    console.log(footnote);
 
     if (boolIsFootnote) {
       const footnoteNote = footnote.querySelector(".footnote-note");
@@ -93,3 +92,77 @@ chapter.addEventListener("click", (e) => {
     }
   });
 });
+
+/*
+ */
+const fsFontDown = document.getElementById("fs-font-down");
+const fsFontUp = document.getElementById("fs-font-up");
+const fsLineDown = document.getElementById("fs-line-down");
+const fsLineUp = document.getElementById("fs-line-up");
+const fsSpacingDown = document.getElementById("fs-spacing-down");
+const fsSpacingUp = document.getElementById("fs-spacing-up");
+const fsWidthDown = document.getElementById("fs-width-down");
+const fsWidthUp = document.getElementById("fs-width-up");
+const fsFontSelection = document.getElementById("fs-font-selection");
+const paragraph = chapter.querySelector("p");
+
+const arrFontSettings = [
+  fsFontDown,
+  fsFontUp,
+  fsLineDown,
+  fsLineUp,
+  fsSpacingDown,
+  fsSpacingUp,
+  fsWidthDown,
+  fsWidthUp,
+  fsFontSelection,
+];
+
+const mapFontSettings = new Map([
+  [fsFontDown, (e) => getCurrentStyleValue(e)],
+  [fsFontUp, (e) => getCurrentStyleValue(e)],
+  [fsLineDown, (e) => getCurrentStyleValue(e)],
+  [fsLineUp, (e) => getCurrentStyleValue(e)],
+  [fsSpacingDown, (e) => getCurrentStyleValue(e)],
+  [fsSpacingUp, (e) => getCurrentStyleValue(e)],
+  [fsWidthDown, (e) => getCurrentStyleValue(e)],
+  [fsWidthUp, (e) => getCurrentStyleValue(e)],
+  [fsFontSelection, (e) => getCurrentStyleValue(e)],
+]);
+
+fontSettings.addEventListener("click", (e) => {
+  arrFontSettings.forEach((setting) => {
+    const boolIsSetting = e.path.includes(setting);
+    if (boolIsSetting) {
+      mapFontSettings.get(setting)(e);
+    }
+  });
+});
+
+function updateChapterStyle(type, value) {
+  return (chapter.style = type + ": " + value);
+}
+
+function getCurrentStyleValue(e) {
+  const fontAttr = e.target.id;
+  const regFontType = /fs-(\w+)-(\w+)/g;
+  const matches = fontAttr.matchAll(regFontType);
+  let type = "";
+
+  for (const [fullMatch, g1, g2] of matches) {
+    if (g2 === "selection") {
+      type = "fontFamily";
+    } else if (g1 !== "font") {
+      g1 === "line"
+        ? (type = "lineHeight")
+        : g1 === "spacing"
+        ? (type = "letterSpacing")
+        : (type = "width");
+    } else {
+      type = "fontSize";
+    }
+  }
+
+  const value = getComputedStyle(paragraph)[type];
+  console.log(value);
+}

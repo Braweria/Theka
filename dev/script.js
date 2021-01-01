@@ -58,10 +58,9 @@ window.addEventListener("touchstart", (e) => {
  * Makes the .info-box into a collapseable box,
  * toggling between .show-block
  *
- * @param   {Array}           infoBox
+ * @param   {Array}           infoBox         Array of HtmlElements
  * @param   {HtmlElement}     box             Single Item of infoBox
  * @param   {Bool}            boolIsInfoBox   Checks if click event is inside infoBox
- * @param   {ClassName}       show-block
  */
 const infoBox = Array.from(document.querySelectorAll(".info-box"));
 

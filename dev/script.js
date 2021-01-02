@@ -104,7 +104,6 @@ const fsSpacingUp = document.getElementById("fs-spacing-up");
 const fsWidthDown = document.getElementById("fs-width-down");
 const fsWidthUp = document.getElementById("fs-width-up");
 const fsFontSelection = document.getElementById("fs-font-selection");
-const paragraph = chapter.querySelector("p");
 
 const arrFontSettings = [
   fsFontDown,
@@ -119,50 +118,168 @@ const arrFontSettings = [
 ];
 
 const mapFontSettings = new Map([
-  [fsFontDown, (e) => getCurrentStyleValue(e)],
-  [fsFontUp, (e) => getCurrentStyleValue(e)],
-  [fsLineDown, (e) => getCurrentStyleValue(e)],
-  [fsLineUp, (e) => getCurrentStyleValue(e)],
-  [fsSpacingDown, (e) => getCurrentStyleValue(e)],
-  [fsSpacingUp, (e) => getCurrentStyleValue(e)],
-  [fsWidthDown, (e) => getCurrentStyleValue(e)],
-  [fsWidthUp, (e) => getCurrentStyleValue(e)],
-  [fsFontSelection, (e) => getCurrentStyleValue(e)],
+  [fsFontDown, (setting) => changeFontSettings(setting, "fd")],
+  [fsFontUp, (setting) => changeFontSettings(setting, "fu")],
+  [fsLineDown, (setting) => changeFontSettings(setting, "ld")],
+  [fsLineUp, (setting) => changeFontSettings(setting, "lu")],
+  [fsSpacingDown, (setting) => changeFontSettings(setting, "sd")],
+  [fsSpacingUp, (setting) => changeFontSettings(setting, "su")],
+  [fsWidthDown, (setting) => changeFontSettings(setting, "wd")],
+  [fsWidthUp, (setting) => changeFontSettings(setting, "wu")],
+  [fsFontSelection, (setting) => changeFontSettings(setting, "fs")],
 ]);
+
+const arrDefaultFontSettings = [
+  {
+    down: fsFontDown,
+    up: fsFontUp,
+    key: "--font-size",
+    value: 1,
+    unit: "rem",
+  },
+  {
+    down: fsLineDown,
+    up: fsLineUp,
+    key: "--line-height",
+    value: 1.5,
+    unit: "rem",
+  },
+  {
+    down: fsSpacingDown,
+    up: fsSpacingUp,
+    key: "--letter-spacing",
+    value: 0,
+    unit: "rem",
+  },
+  {
+    selection: fsFontSelection,
+    key: "--font-type",
+    value: "inherit",
+    unit: "",
+  },
+  {
+    down: fsWidthDown,
+    up: fsWidthUp,
+    key: "--text-width",
+    value: 100,
+    unit: "%",
+  },
+];
+
+let arrUserFontSettings = [];
 
 fontSettings.addEventListener("click", (e) => {
   arrFontSettings.forEach((setting) => {
     const boolIsSetting = e.path.includes(setting);
     if (boolIsSetting) {
-      mapFontSettings.get(setting)(e);
+      mapFontSettings.get(setting)(setting);
+      // changeFontSettings(setting);
     }
   });
 });
 
-function updateChapterStyle(type, value) {
-  return (chapter.style = type + ": " + value);
+function updateChapterStyle(type, value, unit) {
+  return chapter.style.setProperty(type, value + unit);
 }
 
-function getCurrentStyleValue(e) {
+function changeFontSettings(setting, what) {
+  arrUserFontSettings.length === 0
+    ? (arrUserFontSettings = arrDefaultFontSettings)
+    : (arrUserFontSettings = arrUserFontSettings);
+
+  arrUserFontSettings.forEach((obj) => {
+    for (let k in obj) {
+      if (obj[k] === setting) {
+        const value = obj.value;
+        const unit = obj.unit;
+        const key = obj.key;
+
+        const objActions = {
+          key: key,
+          value: value,
+          unit: unit,
+        };
+
+        const newValues = objFontFunc[what](objActions);
+
+        updateChapterStyle(newValues.key, newValues.value, newValues.unit);
+        obj.value = newValues.value;
+      }
+    }
+  });
+}
+
+const objFontFunc = {
+  fd(obj) {
+    return {
+      key: obj.key,
+      value: obj.value > 0.6 ? obj.value - 0.1 : obj.value,
+      unit: obj.unit,
+    };
+  },
+  fu(obj) {
+    return {
+      key: obj.key,
+      value: obj.value < 4.9 ? obj.value + 0.1 : obj.value,
+      unit: obj.unit,
+    };
+  },
+  ld(obj) {
+    return {
+      key: obj.key,
+      value: obj.value > 0.5 ? obj.value - 0.1 : obj.value,
+      unit: obj.unit,
+    };
+  },
+  lu(obj) {
+    return {
+      key: obj.key,
+      value: obj.value < 5.0 ? obj.value + 0.1 : obj.value,
+      unit: obj.unit,
+    };
+  },
+  sd(obj) {
+    return {
+      key: obj.key,
+      value: obj.value > -0.4 ? obj.value - 0.1 : obj.value,
+      unit: obj.unit,
+    };
+  },
+  su(obj) {
+    return {
+      key: obj.key,
+      value: obj.value < 0.4 ? obj.value + 0.1 : obj.value,
+      unit: obj.unit,
+    };
+  },
+  wd(obj) {
+    return {
+      key: obj.key,
+      value: obj.value > 10 ? obj.value - 10 : obj.value,
+      unit: obj.unit,
+    };
+  },
+  wu(obj) {
+    return {
+      key: obj.key,
+      value: obj.value < 100 ? obj.value + 10 : obj.value,
+      unit: obj.unit,
+    };
+  },
+  fs(obj) {
+    // font selection
+  },
+};
+
+function getFontAction(e) {
   const fontAttr = e.target.id;
   const regFontType = /fs-(\w+)-(\w+)/g;
   const matches = fontAttr.matchAll(regFontType);
-  let type = "";
+  let objType = {};
 
-  for (const [fullMatch, g1, g2] of matches) {
-    if (g2 === "selection") {
-      type = "fontFamily";
-    } else if (g1 !== "font") {
-      g1 === "line"
-        ? (type = "lineHeight")
-        : g1 === "spacing"
-        ? (type = "letterSpacing")
-        : (type = "width");
-    } else {
-      type = "fontSize";
-    }
+  for (const [_, g1, g2] of matches) {
+    objType.type = g1;
+    objType.action = g2;
   }
-
-  const value = getComputedStyle(paragraph)[type];
-  console.log(value);
+  return objType;
 }

@@ -2,7 +2,7 @@ import { updateChapterStyle } from "./updateChapterStyle";
 import { fontSettings } from "./fontSettings";
 
 /**
- * eine beschreibung...
+ * Constants of the Font Settings Buttons
  */
 const fsFontDown = document.getElementById("fs-font-down");
 const fsFontUp = document.getElementById("fs-font-up");
@@ -18,6 +18,10 @@ const fsTypeSerif = document.getElementById("fs-type-serif");
 const fsTypeMono = document.getElementById("fs-type-mono");
 const fsReset = document.getElementById("fs-reset");
 
+/**
+ * Array of the Font Setting Buttons
+ * @const   {HTMLElements[]}
+ */
 const arrFontSettings = [
   fsFontDown,
   fsFontUp,
@@ -34,6 +38,10 @@ const arrFontSettings = [
   fsReset,
 ];
 
+/**
+ * Default Font Settings
+ * @const   {object[]}
+ */
 const arrDefaultFontSettings = [
   {
     down: fsFontDown,
@@ -74,8 +82,16 @@ const arrDefaultFontSettings = [
   },
 ];
 
+/**
+ * User Font Settings
+ * @const   {object[]}
+ */
 let arrUserFontSettings = [];
 
+/**
+ * A Map for the different Setting Options
+ * @return  {array}              [return description]
+ */
 const mapFontSettings = new Map([
   [fsFontDown, (setting) => changeFontSettings(setting, "fd")],
   [fsFontUp, (setting) => changeFontSettings(setting, "fu")],
@@ -93,6 +109,10 @@ const mapFontSettings = new Map([
   [fsReset, (setting) => changeFontSettings(setting, "re")],
 ]);
 
+/**
+ * Object of functions for the different settings
+ * @return  {obj}          [return description]
+ */
 const objFontFunc = {
   fd(obj) {
     return {
@@ -199,7 +219,12 @@ function getFontAction(e) {
  * TODO: mach es für emrox!
  */
 
-function changeFontSettings(setting, what) {
+/**
+ * Change the Font Settings
+ * @param    {HTMLElement}   setting   The Font Setting Button that has been clicked
+ * @param    {string}        action    What action has to be taken
+ */
+function changeFontSettings(setting, action) {
   arrUserFontSettings.length === 0
     ? (arrUserFontSettings = arrDefaultFontSettings)
     : (arrUserFontSettings = arrUserFontSettings);
@@ -217,7 +242,7 @@ function changeFontSettings(setting, what) {
           unit: unit,
         };
         console.log(objActions);
-        const newValues = objFontFunc[what](objActions);
+        const newValues = objFontFunc[action](objActions);
         console.log(newValues);
 
         updateChapterStyle(newValues.key, newValues.value, newValues.unit);
@@ -227,17 +252,21 @@ function changeFontSettings(setting, what) {
   });
 }
 
+/**
+ * When clicking a button, check if it is a button from the font settings
+ * @return                                    Return either an action that changes the font settings
+ *                                            OR sets all the settings back to the default
+ */
 export function fontSettingsAction() {
   fontSettings.addEventListener("click", (e) => {
     arrFontSettings.forEach((setting) => {
       const boolIsSetting = e.path.includes(setting);
       if (boolIsSetting) {
-        console.log(setting);
         if (setting === fsReset) {
           chapter.style.cssText = "";
           return (arrUserFontSettings = arrDefaultFontSettings);
         }
-        mapFontSettings.get(setting)(setting);
+        return mapFontSettings.get(setting)(setting);
       }
     });
   });

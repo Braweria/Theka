@@ -2,6 +2,12 @@ import { updateChapterStyle } from "./updateChapterStyle";
 import { fontSettings } from "./fontSettings";
 
 /**
+ * TODO: BETTER NAMING CONVENTION
+ * TODO: das "fs" als prefix entfernen, da sich eh alles um font settings hier handelt
+ * TODO: mach es für emrox!
+ */
+
+/**
  * Constants of the Font Settings Buttons
  */
 const fsFontDown = document.getElementById("fs-font-down");
@@ -214,12 +220,6 @@ function getFontAction(e) {
 }
 
 /**
- * TODO: BETTER NAMING CONVENTION
- * TODO: das "fs" als prefix entfernen, da sich eh alles um font settings hier handelt
- * TODO: mach es für emrox!
- */
-
-/**
  * Change the Font Settings
  * @param    {HTMLElement}   setting   The Font Setting Button that has been clicked
  * @param    {string}        action    What action has to be taken
@@ -261,7 +261,7 @@ export function fontSettingsAction() {
   fontSettings.addEventListener("click", (e) => {
     arrFontSettings.forEach((setting) => {
       const boolIsSetting = e.path.includes(setting);
-      
+
       if (boolIsSetting) {
         if (setting === fsReset) {
           chapter.style.cssText = "";

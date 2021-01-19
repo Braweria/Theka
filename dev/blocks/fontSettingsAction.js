@@ -261,6 +261,7 @@ export function fontSettingsAction() {
   fontSettings.addEventListener("click", (e) => {
     arrFontSettings.forEach((setting) => {
       const boolIsSetting = e.path.includes(setting);
+      
       if (boolIsSetting) {
         if (setting === fsReset) {
           chapter.style.cssText = "";

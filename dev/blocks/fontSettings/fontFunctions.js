@@ -3,87 +3,87 @@
  * @return  {obj}          [return description]
  */
 export const fontFunctions = {
-  fd(obj) {
+  fontDown(obj) {
     return {
       key: obj.key,
       value: obj.value > 0.6 ? obj.value - 0.1 : obj.value,
       unit: obj.unit,
     };
   },
-  fu(obj) {
+  fontUp(obj) {
     return {
       key: obj.key,
       value: obj.value < 4.9 ? obj.value + 0.1 : obj.value,
       unit: obj.unit,
     };
   },
-  ld(obj) {
+  lineDown(obj) {
     return {
       key: obj.key,
       value: obj.value > 0.5 ? obj.value - 0.1 : obj.value,
       unit: obj.unit,
     };
   },
-  lu(obj) {
+  lineUp(obj) {
     return {
       key: obj.key,
       value: obj.value < 5.0 ? obj.value + 0.1 : obj.value,
       unit: obj.unit,
     };
   },
-  sd(obj) {
+  spacingDown(obj) {
     return {
       key: obj.key,
       value: obj.value > -0.4 ? obj.value - 0.1 : obj.value,
       unit: obj.unit,
     };
   },
-  su(obj) {
+  spacingUp(obj) {
     return {
       key: obj.key,
       value: obj.value < 0.4 ? obj.value + 0.1 : obj.value,
       unit: obj.unit,
     };
   },
-  wd(obj) {
+  widthDown(obj) {
     return {
       key: obj.key,
       value: obj.value > 10 ? obj.value - 10 : obj.value,
       unit: obj.unit,
     };
   },
-  wu(obj) {
+  widthUp(obj) {
     return {
       key: obj.key,
       value: obj.value < 100 ? obj.value + 10 : obj.value,
       unit: obj.unit,
     };
   },
-  fs(obj) {
+  fontSelection(obj) {
     // font selection
   },
-  sa(obj) {
+  typeSans(obj) {
     return {
       key: obj.key,
       value: "sans-serif",
       unit: obj.unit,
     };
   },
-  se(obj) {
+  typeSerif(obj) {
     return {
       key: obj.key,
       value: "serif",
       unit: obj.unit,
     };
   },
-  mo(obj) {
+  typeMono(obj) {
     return {
       key: obj.key,
       value: "monospace",
       unit: obj.unit,
     };
   },
-  re(obj) {
+  reset(obj) {
     // code
   },
 };

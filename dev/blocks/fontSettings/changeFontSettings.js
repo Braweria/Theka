@@ -30,7 +30,6 @@ export function changeFontSettings(setting, action) {
           value: value,
           unit: unit,
         };
-
         const newValues = fontFunctions[action](objActions);
 
         updateChapterStyle(newValues.key, newValues.value, newValues.unit);

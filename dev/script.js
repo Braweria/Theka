@@ -3,8 +3,8 @@ const chapter = document.getElementById("chapter");
 import "./style.scss";
 
 import { onDoubleTap } from "./blocks/onDoubleTap";
-import { fontSettingsAction } from "./blocks/fontSettingsAction";
-import { fontSettings } from "./blocks/fontSettings";
+import { fontSettingsAction } from "./blocks/fontSettings/fontSettingsAction";
+import { fontSettingsContainer } from "./blocks/fontSettings/fontSettingsContainer";
 
 /**
  * Listen if User tapped outside the Font Settings
@@ -15,17 +15,18 @@ import { fontSettings } from "./blocks/fontSettings";
 let boolFontSettings = false;
 
 onDoubleTap(chapter, (e) => {
-  fontSettings.classList.add("show-flex");
+  fontSettingsContainer.classList.add("show-flex");
   boolFontSettings = true;
+  console.log("hi");
 });
 
 window.addEventListener("touchstart", (e) => {
   if (boolFontSettings) {
-    const boolInside = e.path.includes(fontSettings);
+    const boolInside = e.path.includes(fontSettingsContainer);
     if (boolInside) {
       // do something
     } else {
-      fontSettings.classList.remove("show-flex");
+      fontSettingsContainer.classList.remove("show-flex");
     }
   }
 });

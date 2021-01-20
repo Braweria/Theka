@@ -1,6 +1,6 @@
 /**
- * Object of functions for the different settings
- * @return  {obj}          [return description]
+ * Object of functions for the different font settings
+ * @return  {object}          returns a new object with adjusted values
  */
 export const fontFunctions = {
   fontDown(obj) {

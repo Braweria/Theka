@@ -17,7 +17,6 @@ let boolFontSettings = false;
 onDoubleTap(chapter, (e) => {
   fontSettingsContainer.classList.add("show-flex");
   boolFontSettings = true;
-  console.log("hi");
 });
 
 window.addEventListener("touchstart", (e) => {

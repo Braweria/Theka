@@ -1,39 +1,6 @@
-:root {
-  /**
-   * [Changeable Settings]
-   * These are meant for updating the font and
-   * background colour later in JavaScript.
-   */
-  --main-color: #415160;
-  --secondary-color: #fbfbf8;
-  --additional-color: #92928b;
-  --font-size: 1rem;
-  --line-height: 1.5rem;
-  --letter-spacing: 0rem;
-  --font-type: inherit;
-  --text-width: 100%;
-
-  /* FIXED SETTINGS */
-  /* [Colour Settings] */
-  --ink-blue: #415160;
-  --paper-white: #fbfbf8;
-  --drk-paper-white: #efefe7;
-  --brown-spot: #92928b;
-
-  /* [Font Settings] */
-  --xs-font-size: 0.6rem;
-  --sm-font-size: 0.8rem;
-  --reg-font-size: 1rem;
-
-  /* [Grid Settings] */
-  --grid-margin: 26px;
-  --grid-gutters: 9px;
-  --grid-column: 74px;
-}
-
-@mixin tooltip {
-  z-index: 5000;
-}
+@import "./variables/changeable-settings";
+@import "./variables/breakpoints";
+@import "./variables/zindex";
 
 @mixin grid-margin {
   margin: {
@@ -42,7 +9,7 @@
   }
 }
 
-@mixin navbar-td {
+@mixin list-td {
   ul {
     display: flex;
     flex-direction: column;
@@ -172,7 +139,7 @@ h6 {
 
 #font-settings {
   @include grid-margin;
-  @include tooltip;
+  z-index: $zindex-fixed;
   background-color: var(--ink-blue);
   padding: var(--reg-font-size);
   border-radius: var(--reg-font-size);
@@ -182,10 +149,8 @@ h6 {
   justify-content: space-between;
 
   width: calc(100% - var(--grid-margin) * 2);
-  // max-width: 530px;
   position: fixed;
   top: 30%;
-  // left: 20%;
 
   .square {
     position: relative;
@@ -312,7 +277,7 @@ footer,
   background: var(--drk-paper-white);
 
   nav {
-    @include navbar-td;
+    @include list-td;
   }
 
   #footer-navbar {

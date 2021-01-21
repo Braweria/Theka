@@ -3,5 +3,8 @@
  * Mobile First
  */
 
+@import "./blocks/SCSS/variables/fixed-settings-color";
+@import "./blocks/SCSS/variables/fixed-settings-font";
+@import "./blocks/SCSS/variables/fixed-settings-grid";
+
 @import "blocks/SCSS/PHONE";
-@import "blocks/SCSS/TABLET";

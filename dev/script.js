@@ -2,9 +2,9 @@ const chapter = document.getElementById("chapter");
 
 import "./style.scss";
 
-import { onDoubleTap } from "./blocks/onDoubleTap";
-import { fontSettingsAction } from "./blocks/fontSettings/fontSettingsAction";
-import { fontSettingsContainer } from "./blocks/fontSettings/fontSettingsContainer";
+import { onDoubleTap } from "./blocks/JS/onDoubleTap";
+import { fontSettingsAction } from "./blocks/JS/fontSettings/fontSettingsAction";
+import { fontSettingsContainer } from "./blocks/JS/fontSettings/fontSettingsContainer";
 
 /**
  * Listen if User tapped outside the Font Settings

@@ -1,0 +1,43 @@
+@use "../variables/fixed-settings-font" as *;
+
+@mixin top-down {
+  ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 0;
+
+    li {
+      a {
+        text-align: left;
+        font-size: var(--reg-font-size);
+        padding: {
+          bottom: calc(1em / 2);
+          top: 0;
+        }
+      }
+    }
+  }
+}
+
+@mixin left-right {
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+
+    li {
+      a {
+        text-align: left;
+        font-size: var(--reg-font-size);
+        padding: {
+          bottom: 0;
+          right: calc(1em / 4);
+          left: calc(1em / 4);
+          top: 0;
+        }
+      }
+    }
+  }
+}

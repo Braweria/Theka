@@ -213,7 +213,11 @@ article,
     margin: 0;
     left: 0;
     top: 0;
-
+    /*
+     todo: font-settings soll neben chapter sein und mit runter scrollen
+     todo: außerdem soll es einen bestimmten Abstand haben zwischen sich selber und margin
+     todo: auch wenn der user die width des textes ändert.
+    */
     .sqaure {
       flex: 1 1 50%;
     }

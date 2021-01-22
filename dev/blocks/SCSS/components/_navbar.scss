@@ -1,0 +1,62 @@
+@use "../variables/breakpoints" as *;
+@use "../mixins/list-dir" as *;
+
+header {
+  background: var(--drk-paper-white);
+}
+
+nav,
+#top-navbar {
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    padding: 0 26px;
+
+    li {
+      list-style: none;
+      flex: 1 1 30%;
+      text-align: center;
+
+      a {
+        color: var(--ink-blue);
+        text-decoration: none;
+        font-size: var(--reg-font-size);
+        padding: 20px 0;
+
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+    }
+  }
+}
+
+@media (min-width: $sm) {
+  #top-navbar {
+    ul {
+      li {
+        flex: 1 1 20%;
+      }
+    }
+  }
+}
+
+@media (min-width: $md) {
+  #top-navbar {
+    ul {
+      width: 70%;
+      margin: auto;
+    }
+  }
+}
+
+@media (min-width: $lg) {
+  #top-navbar {
+    ul {
+      width: 50%;
+    }
+  }
+}

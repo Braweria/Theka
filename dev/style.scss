@@ -10,8 +10,25 @@
  * Repository:      xxx
  */
 
-@import "./blocks/SCSS/variables/fixed-settings-color";
-@import "./blocks/SCSS/variables/fixed-settings-font";
-@import "./blocks/SCSS/variables/fixed-settings-grid";
+@use "./blocks/SCSS/variables/reset";
+@use "./blocks/SCSS/variables/fixed-settings-color";
+@use "./blocks/SCSS/variables/fixed-settings-font";
+@use "./blocks/SCSS/variables/fixed-settings-grid";
 
-@import "blocks/SCSS/PHONE";
+@use "blocks/SCSS/Chapter";
+
+* {
+  color: var(--ink-blue);
+}
+
+/**
+ * Changeable Classes
+ */
+
+.show-flex {
+  display: flex !important;
+}
+
+.show-block {
+  display: block !important;
+}

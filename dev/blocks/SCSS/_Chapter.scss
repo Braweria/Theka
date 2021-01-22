@@ -1,97 +1,10 @@
-@import "./variables/changeable-settings";
-@import "./variables/breakpoints";
-@import "./variables/zindex";
+@use "./variables/changeable-settings" as *;
+@use "./variables/breakpoints" as *;
+@use "./variables/zindex" as *;
+@use "./mixins/grid-margin" as *;
 
-@mixin grid-margin {
-  margin: {
-    left: var(--grid-margin);
-    right: var(--grid-margin);
-  }
-}
-
-@mixin list-td {
-  ul {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding: 0;
-
-    li {
-      a {
-        text-align: left;
-        font-size: var(--reg-font-size);
-        padding: {
-          bottom: calc(1em / 2);
-          top: 0;
-        }
-      }
-    }
-  }
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  color: var(--ink-blue);
-}
-
-header {
-  background: var(--drk-paper-white);
-}
-
-nav,
-#top-navbar {
-  ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-    padding: 0 26px;
-
-    li {
-      list-style: none;
-      flex: 1 1 30%;
-      text-align: center;
-
-      a {
-        color: var(--ink-blue);
-        text-decoration: none;
-        font-size: var(--reg-font-size);
-        padding: 20px 0;
-
-        width: 100%;
-        height: 100%;
-        display: block;
-      }
-    }
-  }
-}
-
-h1 {
-  font-size: calc(var(--reg-font-size) * 2.3);
-}
-
-h2 {
-  font-size: calc(var(--reg-font-size) * 2);
-}
-
-h3 {
-  font-size: calc(var(--reg-font-size) * 1.7);
-}
-
-h4 {
-  font-size: calc(var(--reg-font-size) * 1.4);
-}
-
-h5 {
-  font-size: calc(var(--reg-font-size) * 1.1);
-}
-
-h6 {
-  font-size: calc(var(--reg-font-size) * 1);
-}
+@use "./components/navbar";
+@use "./components/footer";
 
 @mixin arrow {
   stroke: var(--brown-spot);
@@ -166,6 +79,7 @@ h6 {
     // &:last-child::before {
     //   padding-top: calc(22.5%);
     // }
+    // this is meant for the selection
 
     button,
     select {
@@ -216,7 +130,7 @@ article,
     margin-top: calc(var(--font-size) * 0.7);
     width: var(--text-width);
 
-    text-align: justify;
+    // text-align: justify;
   }
 
   .has-footnote > .footnote-indicator > svg {
@@ -271,49 +185,42 @@ article,
   text-align: center;
 }
 
-footer,
-#footer {
-  padding: var(--grid-margin);
-  background: var(--drk-paper-white);
-
-  nav {
-    @include list-td;
+@media (min-width: $sm) {
+  #font-settings {
+    width: 400px;
+    left: calc((50% - 200px) - (var(--grid-margin)));
   }
+}
 
-  #footer-navbar {
-    a {
-      margin: {
-        bottom: 1em;
-      }
-    }
-  }
-
-  #footer-important-navbar {
-    margin: {
-      top: 3em;
-    }
-
-    a {
-      font-size: var(--sm-font-size);
-    }
-  }
-
-  #copyright-notice {
-    font-size: var(--xs-font-size);
-    text-align: center;
-    width: 50%;
+@media (min-width: $md) {
+  article,
+  #chapter {
+    width: 70%;
     margin: auto;
   }
 }
 
-/**
- * Changeable Classes
- */
+@media (min-width: $lg) {
+  #settings-and-chapter-container {
+    display: flex;
+    flex-direction: row;
+  }
 
-.show-flex {
-  display: flex !important;
-}
+  #font-settings {
+    display: flex;
+    position: sticky;
+    width: 200px;
+    margin: 0;
+    left: 0;
+    top: 0;
 
-.show-block {
-  display: block !important;
+    .sqaure {
+      flex: 1 1 50%;
+    }
+  }
+
+  article,
+  #chapter {
+    width: 50%;
+  }
 }

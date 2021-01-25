@@ -210,25 +210,43 @@ article,
     flex-direction: row;
   }
 
+  .font-settings-container {
+    height: 0;
+    position: sticky;
+    top: calc(4 * var(--reg-font-size));
+    margin-left: calc(2 * var(--reg-font-size));
+  }
+
   #font-settings {
     display: flex;
-    position: sticky;
-    width: 200px;
+    position: relative;
+    width: 150px;
     margin: 0;
     left: 0;
     top: 0;
-    /*
-     todo: font-settings soll neben chapter sein und mit runter scrollen
-     todo: außerdem soll es einen bestimmten Abstand haben zwischen sich selber und margin
-     todo: auch wenn der user die width des textes ändert.
-    */
-    .sqaure {
-      flex: 1 1 50%;
+    background: none;
+
+    opacity: 0.1;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    .square {
+      flex: 1 1 30%;
+
+      button {
+        background: none;
+      }
     }
   }
 
   article,
   #chapter {
-    width: 50%;
+    width: var(--text-width);
+
+    p {
+      width: 100%;
+    }
   }
 }

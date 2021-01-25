@@ -37,7 +37,17 @@ export const defaultFontSettings = [
     down: "widthDown",
     up: "widthUp",
     key: "--text-width",
-    value: 100,
+    value: checkViewport(),
     unit: "%",
   },
 ];
+
+import { vw } from "../getViewport";
+
+function checkViewport() {
+  if (vw >= 1200) {
+    return 50;
+  } else {
+    return 100;
+  }
+}

@@ -1,3 +1,5 @@
+@use "./breakpoints" as *;
+
 :root {
   /**
    * [Changeable Settings]
@@ -12,4 +14,10 @@
   --letter-spacing: 0rem;
   --font-type: inherit;
   --text-width: 100%;
+}
+
+@media (min-width: $lg) {
+  :root {
+    --text-width: 50%;
+  }
 }

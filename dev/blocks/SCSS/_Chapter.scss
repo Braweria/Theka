@@ -50,6 +50,10 @@
   }
 }
 
+.font-settings-container {
+  height: 0;
+}
+
 #font-settings {
   @include grid-margin;
   z-index: $zindex-fixed;

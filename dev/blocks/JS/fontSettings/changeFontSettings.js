@@ -17,7 +17,6 @@ export let userFontSettings = [];
  * Checks if storageFontSettings exists and updates the style accordingly
  */
 export function checkForStorage() {
-  console.log("hello....");
   if (storageFontSettings) {
     userFontSettings = storageFontSettings;
     userFontSettings.forEach((el) => {

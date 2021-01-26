@@ -3,10 +3,28 @@ import { defaultFontSettings } from "./defaultFontSettings";
 import { fontFunctions } from "./fontFunctions";
 
 /**
+ * @const   {object[]}    storageFontSettings   Gets the font settings from the localStorage and parses it
+ */
+const storageFontSettings = JSON.parse(localStorage.getItem("fontSettings"));
+
+/**
  * User Font Settings
  * @const   {object[]}
  */
 export let userFontSettings = [];
+
+/**
+ * Checks if storageFontSettings exists and updates the style accordingly
+ */
+export function checkForStorage() {
+  console.log("hello....");
+  if (storageFontSettings) {
+    userFontSettings = storageFontSettings;
+    userFontSettings.forEach((el) => {
+      updateChapterStyle(el.key, el.value, el.unit);
+    });
+  }
+}
 
 /**
  * Change the Font Settings

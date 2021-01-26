@@ -217,8 +217,11 @@ article,
   .font-settings-container {
     height: 0;
     position: sticky;
-    top: calc(4 * var(--reg-font-size));
-    margin-left: calc(2 * var(--reg-font-size));
+    top: calc(2 * var(--reg-font-size));
+    bottom: calc(4 * var(--reg-font-size));
+    margin: {
+      left: calc(2 * var(--reg-font-size));
+    }
   }
 
   #font-settings {

@@ -12,6 +12,7 @@ module.exports = merge(common, {
     }),
     new HtmlWebpackPlugin({
       template: "./dev/frontpage.html",
+      filename: "frontpage.html",
     }),
   ],
   module: {

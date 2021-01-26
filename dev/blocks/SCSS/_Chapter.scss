@@ -146,6 +146,10 @@ article,
     background-color: var(--ink-blue);
     border-radius: var(--reg-font-size);
     padding: var(--reg-font-size);
+    margin: {
+      top: var(--font-size);
+      bottom: calc(2 * var(--font-size));
+    }
     display: none;
     color: var(--paper-white);
     font-style: italic;

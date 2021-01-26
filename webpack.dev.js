@@ -11,8 +11,8 @@ module.exports = merge(common, {
       filename: "post.html",
     }),
     new HtmlWebpackPlugin({
-      template: "./dev/frontpage.html",
-      filename: "frontpage.html",
+      template: "./dev/archive-book.html",
+      filename: "archive-book.html",
     }),
   ],
   module: {

@@ -16,6 +16,7 @@
 @use "./blocks/SCSS/variables/fixed-settings-grid";
 
 @use "blocks/SCSS/Chapter";
+@use "blocks/SCSS/BookSIngleOverview";
 
 * {
   color: var(--ink-blue);

@@ -59,4 +59,5 @@ export function changeFontSettings(setting, action) {
 
 export function backToDefaultSettings() {
   userFontSettings = defaultFontSettings;
+  localStorage.setItem("fontSettings", JSON.stringify(defaultFontSettings));
 }

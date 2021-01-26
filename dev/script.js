@@ -5,6 +5,9 @@ import "./style.scss";
 import { onDoubleTap } from "./blocks/JS/onDoubleTap";
 import { fontSettingsAction } from "./blocks/JS/fontSettings/fontSettingsAction";
 import { fontSettingsContainer } from "./blocks/JS/fontSettings/fontSettingsContainer";
+import { checkForStorage } from "./blocks/JS/fontSettings/changeFontSettings";
+
+checkForStorage();
 
 /**
  * Listen if User tapped outside the Font Settings

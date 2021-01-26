@@ -8,6 +8,10 @@ module.exports = merge(common, {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./dev/post.html",
+      filename: "post.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./dev/frontpage.html",
     }),
   ],
   module: {

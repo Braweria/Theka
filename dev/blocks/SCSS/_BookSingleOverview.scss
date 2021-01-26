@@ -1,0 +1,22 @@
+@use "./variables/breakpoints" as *;
+@use "./mixins/grid-margin" as *;
+@use "./variables/fixed-settings-font" as *;
+
+@use "./components/navbar";
+@use "./components/footer";
+
+main.book-single-overview {
+  @include grid-margin;
+
+  .book-description {
+    margin-top: 50px;
+
+    p {
+      font-style: italic;
+      margin: {
+        top: var(--reg-font-size);
+        bottom: var(--reg-font-size);
+      }
+    }
+  }
+}

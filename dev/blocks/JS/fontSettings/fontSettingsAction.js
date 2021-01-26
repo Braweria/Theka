@@ -17,10 +17,12 @@ export function fontSettingsAction() {
       curValue = value;
     }
 
-    curValue === "reset"
-      ? (chapter.style.cssText = "" && backToDefaultSettings())
-      : fontSettingActions[curValue](curValue);
-
-    localStorage.setItem("fontSettings", JSON.stringify(userFontSettings));
+    if (curValue === "reset") {
+      chapter.style.cssText = "";
+      backToDefaultSettings();
+    } else {
+      fontSettingActions[curValue](curValue);
+      localStorage.setItem("fontSettings", JSON.stringify(userFontSettings));
+    }
   });
 }

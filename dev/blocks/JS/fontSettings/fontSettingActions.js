@@ -17,5 +17,3 @@ export const fontSettingActions = fontSettingButtons.reduce((acc, cur) => {
       changeFontSettings(setting, cur.dataset.fontAction),
   };
 }, {});
-
-console.log(fontSettingActions);

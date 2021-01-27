@@ -77,4 +77,39 @@ if (chapter !== null) {
   });
 
   fontSettingsAction();
+
+  /**
+   * todo: https://developer.mozilla.org/en-US/docs/Web/API/Selection
+   * todo: wie bei medium, wenn etwas selektiert worden ist, soll ein contextmenu aufpoppen
+   */
+
+  chapter.addEventListener("mouseup", (e) => {
+    const selection = window.getSelection();
+    const anchorNode = selection.anchorNode.parentNode;
+    const focusNode = selection.focusNode.parentNode;
+    const anchorOffset = selection.anchorOffset;
+    const focusOffset = selection.focusOffset;
+    console.log(anchorOffset, focusOffset);
+
+    const range = document.createRange();
+    range.setStart(anchorNode, anchorOffset - 10);
+    range.setEnd(focusNode, focusOffset + 10);
+  });
+}
+
+function getPosition(e) {
+  let posX = 0;
+  let posY = 0;
+
+  if (e.pageX || e.pageY) {
+    posX = e.pageX;
+    posY = e.pageY;
+  } else if (e.clientX || e.clientY) {
+    posx =
+      e.clientX +
+      document.body.scrollLeft +
+      document.documentElement.scrollLeft;
+    posy =
+      e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+  }
 }

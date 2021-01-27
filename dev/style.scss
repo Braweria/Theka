@@ -33,3 +33,8 @@
 .show-block {
   display: block !important;
 }
+
+*::selection {
+  background-color: var(--ink-blue);
+  color: var(--paper-white);
+}

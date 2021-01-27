@@ -23,8 +23,14 @@ module.exports = merge(common, {
       },
     ],
   },
+  devtool: "inline-source-map",
   devServer: {
-    contentBase: "./dist",
+    contentBase: path.join(__dirname, "dist"),
+    watchContentBase: true,
+    inline: true,
+    hot: true,
+    compress: true,
+    port: 8080,
   },
   output: {
     filename: "script.dev.js",

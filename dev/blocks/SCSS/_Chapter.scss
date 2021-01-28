@@ -133,8 +133,6 @@ article,
 
     margin-top: calc(var(--font-size) * 0.7);
     width: var(--text-width);
-
-    
   }
 
   .has-footnote > .footnote-indicator > svg {
@@ -193,6 +191,75 @@ article,
   text-align: center;
 }
 
+#select-toolbar {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+
+  .arrow {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: -1;
+
+    &::before {
+      content: "";
+      transform: rotate(45deg);
+      display: block;
+      height: 15px;
+      width: 15px;
+      background: var(--ink-blue);
+    }
+  }
+
+  ul {
+    padding: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: var(--ink-blue);
+
+    li {
+      button {
+        padding: calc(var(--reg-font-size) / 2);
+        font-size: var(--reg-font-size);
+        border: 0;
+        background: var(--ink-blue);
+        color: var(--paper-white);
+        cursor: pointer;
+
+        &:hover {
+          background: var(--ink-blue-dark);
+        }
+      }
+    }
+  }
+}
+
+mark.highlight {
+  background-color: var(--ink-blue-light);
+}
+
+mark#bookmark {
+  position: relative;
+  background: none;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: var(--font-size);
+    height: var(--font-size);
+    background: var(--ink-blue);
+    right: var(--font-size);
+    margin-left: calc(var(--font-size) / 2);
+    margin-right: calc(var(--font-size) / 2);
+    border-radius: 50%;
+  }
+}
+
 @media (min-width: $sm) {
   #font-settings {
     width: 400px;
@@ -210,6 +277,7 @@ article,
 
 @media (min-width: $lg) {
   #settings-and-chapter-container {
+    position: relative;
     display: flex;
     flex-direction: row;
   }

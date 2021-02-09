@@ -2,7 +2,7 @@
   "name": "wp_book_theme",
   "version": "1.0.0",
   "private": true,
-  "description": "A book theme for WordPress.",
+  "description": "A book theme for both authors and readers.",
   "main": "script.js",
   "scripts": {
     "wp start": "webpack serve --config webpack.dev.js --open",

@@ -11,7 +11,7 @@
     "build": "next build",
     "start": "next start"
   },
-  "author": "Wiktoria (Braweria) Mielcarek",
+  "author": "Wiktoria Mielcarek (Braweria)",
   "license": "ISC",
   "devDependencies": {
     "@types/react": "^17.0.1",

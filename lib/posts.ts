@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import remark from "remark";
 import html from "remark-html";
+import footnotes from "remark-footnotes";
 
 /**
  * Path from Current Working Directory to posts
@@ -69,6 +70,7 @@ export async function getPostData(id): object {
 
   const processedContent = await remark()
     .use(html)
+    .use(footnotes, {inlineNotes: true})
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
 

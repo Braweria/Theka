@@ -1,5 +1,7 @@
 import { getAllPostIds, getPostData } from "../../lib/posts";
+import Layout from "../../components/TSX/Layout";
 import Head from "next/head";
+import Article from "../../components/TSX/Article";
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
@@ -20,14 +22,11 @@ export async function getStaticPaths() {
 
 export default function Post({ postData }) {
   return (
-    <>
+    <Layout>
     <Head>
-      <title>{postData.title</title>
+      <title>{postData.title}</title>
     </Head>
-    <article>
-      <h1>{postData.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-    </article>
-    </>
+    <Article content={postData.contentHtml} title={postData.title} />
+    </Layout>
   );
 }

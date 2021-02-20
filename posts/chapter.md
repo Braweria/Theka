@@ -1,18 +1,26 @@
-# Kapitel 1
+---
+title: "The Great Cat Conspiracy: Kapitel 1"
+date: "2021-02-20"
+---
+
 ## Synopsis
+
 Die Party wird von [[DobermannFamilie#Herzog Heinrich Dobermann|Herzog Heinrich]] gebeten eine Gruppe von Katzen Banditen zu erledigen, welche die Lagerhallen bei der [[EisenMine|Mine]] angegriffen haben und ausräubt. Leider ist das jedoch eine komplette Lüge. Heinrich hat Moggies und Streuner, welche zu ihm gekommen sind, zur [[KatzenschutzGesellschaft|Katzenschutz Gesellschaft]] für Essen und Unterkunft, entführt und dann verskalvt für die Minenarbeit. Die "Banditen", sind entkommene Katzen die sich in einem Dachsbau verstecken.
 
-Sein Plan ist es die Party nach Ellendonk zu schicken, damit sie sich mit den Katzen kümmern. Irrelevant was sie machen, wird Heinrich versuchen sie unterwegs zu töten mit einem Überfall.
+Sein Plan ist es die Party nach Ellendonk zu schicken, damit sie sich mit den Katzen kümmern. Irrelevant was sie machen, wird Heinrich versuchen sie unterwegs zu töten mit einem Überfall. [^1]
 
 ## Einführung
 
-Die Gruppe kennt sich bereits und nennen sich die Pioniere. Sie kommen gerade von einer Expedition zurück und wollen sich ausruhen. Nach wenigen Tagen bekommen sie eine Nachricht von einem Boten. Es ist ein Brief von Herzog Heinrich Dobermann.
+Die Gruppe kennt sich bereits und nennen sich die Pioniere. Sie kommen gerade von einer Expedition zurück und wollen sich ausruhen. Nach wenigen Tagen bekommen sie eine Nachricht von einem Boten. Es ist ein Brief von Herzog Heinrich Dobermann. [^yooo]
+
+[^yooo]: ayyyyyy
 
 Würden die Spieler die Einladung verneinen, bekommen sie einen Feind von einer der stärksten Adligen Familien.
 
 > Meine liebsten Freunde,
 > Ich habe Berichte über eure jüngsten Erfolge gehört und möchte mit euch über wichtige Angelegenheiten sprechen. DIese sind von sehr großer Bedeutung!
 > Bitte besucht mich so schnell wie möglich in der Apolda Villa.
+>
 > - Heinrich Dobermann
 
 ## Szenen
@@ -27,12 +35,13 @@ Würden die Spieler die Einladung verneinen, bekommen sie einen Feind von einer 
 - [[#Szene 8]]
 
 ### Szene 1: Apolda Villa
+
 - **Wie sind die Spieler hier her gekommen?** Durch die Einladung von Heinrich Dobermann.
 - **Was müssen die Spieler hier erreichen?** Die Dobermann Familie treffen, erfahren was in Ellendonk passiert und das Angebot akzeptieren oder ablehnen.
 - **Wer oder was hällt sie davon ab?** Herzog Heinrichs List.
 - **Welche Szene kommt als nächstest?** [[#Szene 2 Aufrüsten und los gehen]]
 
-> Apolda Villa ist im norden von Pugmire, genau an der Grenze, aber es könnte genauso gut eine andere Welt sein. Es gibt Wachhunden von den verschiedensten Familien und die Tore sind versiegelt. Die Villa der Dobermann ist palastartig und konkurriert mit der Größe und Pracht die der Burg Pugmire selbst.
+> Apolda Villa ist im norden von Pugmire, genau an der Grenze, aber es könnte genauso gut eine andere Welt sein. Es gibt Wachhunden von den verschiedensten Familien und die Tore sind versiegelt. Die Villa der Dobermann ist palastartig und konkurriert mit der Größe und Pracht die der Burg Pugmire selbst.^[you can type them inline, which may be easier, since you don’t have to pick an identifier and move down to type the note.]
 
 Die Party kann durch das [[#Haupttor]] gehen, durch das [[#Arbeitertor]] oder versuchen rein zu [[#Schleichen]].
 
@@ -44,7 +53,7 @@ Am Haupttor stehen zwei sehr großen Cane-Corso Wachhunden. Die tragen die Dober
 
 Wenn die Party das Tor erreicht, halten die Wachhunde sie auf und sagt, sie sollen sich gefälligst zum Arbeitertor wenden. Wenn sie versuchen sich zu erklären, werden die nicht ernst genommen.
 
-Charaktere können einen *Charima Check gegen 10* machen, um die Wachhunde zu überzeugen. Charaktere mit einem Soldaten oder Adeligen Hintergrund können evtl. Advantage bekommen, je nachdem wie sie sich präsentieren.
+Charaktere können einen _Charima Check gegen 10_ machen, um die Wachhunde zu überzeugen. Charaktere mit einem Soldaten oder Adeligen Hintergrund können evtl. Advantage bekommen, je nachdem wie sie sich präsentieren.
 
 Bei einem Erfolg sind die Wachhunde immer noch nicht völlig überzeugt, weshalb einer von denen die Party rein eskortiert in den Meetingraum mit Heinrich.
 
@@ -72,7 +81,7 @@ Wenn die Party erklärt, warum sie da sind, erkennt Archer die Gruppe. Man hat i
 
 ##### Schleichen
 
-Wenn die Party versucht reinzuschleichen, muss sie einen *Dexterity Check mit Disadvantage machen gegen 20.* Die Villa ist sehr stark verteidigt durch Wachhunde.
+Wenn die Party versucht reinzuschleichen, muss sie einen _Dexterity Check mit Disadvantage machen gegen 20._ Die Villa ist sehr stark verteidigt durch Wachhunde.
 
 -> [[#In der Apolda Villa]]
 
@@ -121,3 +130,5 @@ Graff kam nicht zu Wort.
 #### Wache halten
 
 ### Szene 3: Ankunft in Ellendonk
+
+[^1]: Das ist ein Footnote test

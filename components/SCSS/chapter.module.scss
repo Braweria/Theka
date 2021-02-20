@@ -1,0 +1,353 @@
+@use "./variables/breakpoints" as *;
+@use "./variables/zindex" as *;
+@use "./mixins/grid-margin" as *;
+
+@mixin arrow {
+  stroke: var(--brown-spot);
+  fill: var(--brown-spot);
+  width: var(--grid-column);
+}
+
+.next-prev-chapter-container {
+  @include grid-margin;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 50px;
+
+  a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.arrow-right {
+  text-decoration: none;
+  width: 50%;
+  justify-content: flex-end;
+
+  svg {
+    @include arrow;
+  }
+}
+
+.arrow-left {
+  text-decoration: none;
+  width: 50%;
+  justify-content: flex-start;
+
+  svg {
+    @include arrow;
+    transform: scale(-1, 1);
+  }
+}
+
+.font-settings-container {
+  height: 0;
+}
+
+#font-settings {
+  @include grid-margin;
+  z-index: $zindex-fixed;
+  background-color: var(--ink-blue);
+  padding: var(--reg-font-size);
+  border-radius: var(--reg-font-size);
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  width: calc(100% - var(--grid-margin) * 2);
+  position: fixed;
+  top: 30%;
+
+  .square {
+    position: relative;
+    flex: 1 1 20%;
+    margin: calc((100% - (20% * 4)) / 8);
+
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 100%;
+    }
+
+    // &:last-child::before {
+    //   padding-top: calc(22.5%);
+    // }
+    // this is meant for the selection
+
+    button,
+    select {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+
+      border-radius: 10px;
+      appearance: none;
+      border: none;
+      background: var(--paper-white);
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      > img {
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+#chapter {
+  @include grid-margin;
+
+  h1 {
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: calc(var(--font-size) * 3);
+  }
+
+  p {
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+    font-family: var(--font-type);
+    color: var(--main-color);
+
+    margin-top: calc(var(--font-size) * 0.7);
+    width: var(--text-width);
+  }
+
+  .has-footnote > .footnote-indicator > svg {
+    width: 8px;
+    fill: var(--ink-blue);
+  }
+
+  .footnote-note {
+    background-color: var(--ink-blue);
+    border-radius: var(--reg-font-size);
+    padding: var(--reg-font-size);
+    margin: {
+      top: var(--font-size);
+      bottom: calc(2 * var(--font-size));
+    }
+    display: none;
+    color: var(--paper-white);
+    font-style: italic;
+  }
+
+  .info-box {
+    background: var(--drk-paper-white);
+    padding: var(--reg-font-size);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 0.7rem;
+    margin: {
+      top: var(--reg-font-size);
+      bottom: var(--reg-font-size);
+    }
+
+    span {
+      font-weight: 700;
+      font-style: italic;
+      flex: 1;
+    }
+
+    .info-text {
+      display: none;
+    }
+
+    p {
+      font-style: italic;
+    }
+  }
+}
+
+#comment-section {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#select-toolbar {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+
+  .arrow {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: -1;
+
+    &::before {
+      content: "";
+      transform: rotate(45deg);
+      display: block;
+      height: 15px;
+      width: 15px;
+      background: var(--ink-blue);
+    }
+  }
+
+  ul {
+    padding: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: var(--ink-blue);
+    display: flex;
+    flex-direction: row;
+
+    li {
+      flex: 1;
+
+      // &:nth-child(even) {
+      //   border: {
+      //     left: 1px solid var(--paper-white);
+      //     right: 1px solid var(--paper-white);
+      //   }
+
+      // margin: {
+      //   left: 5px;
+      //   right: 5px;
+      // }
+      // padding: {
+      //   left: 5px;
+      //   right: 5px;
+      // }
+      // }
+
+      button {
+        padding: calc(var(--reg-font-size) / 2);
+        font-size: var(--reg-font-size);
+        border: 0;
+        background: var(--ink-blue);
+        color: var(--paper-white);
+        cursor: pointer;
+
+        svg {
+          fill: var(--paper-white);
+          height: var(--reg-font-size);
+          // transform: rotate(45deg);
+        }
+
+        &:hover {
+          background: var(--ink-blue-dark);
+        }
+      }
+    }
+  }
+}
+
+mark.highlight {
+  background-color: var(--ink-blue-light);
+}
+
+mark#bookmark {
+  position: relative;
+  background: none;
+
+  &::after {
+    content: url('data:image/svg+xml; utf-8, <svg xmlns="http://www.w3.org/2000/svg" fill="%23415160" height="1rem" viewBox="0 0 20 28.92"><path d="M18.38,28.7l-7.76-6.2a1,1,0,0,0-1.24,0L1.62,28.7A1,1,0,0,1,0,27.92V5A5,5,0,0,1,5,0H15a5,5,0,0,1,5,5V27.92A1,1,0,0,1,18.38,28.7Z"/></svg>');
+    display: inline-block;
+    width: var(--font-size);
+    height: var(--font-size);
+    right: var(--font-size);
+    margin-left: calc(var(--font-size) / 3);
+    margin-right: calc(var(--font-size) / 3);
+  }
+}
+
+@media (min-width: $sm) {
+  #font-settings {
+    width: 400px;
+    left: calc((50% - 200px) - (var(--grid-margin)));
+  }
+}
+
+@media (min-width: $md) {
+  #chapter {
+    width: 70%;
+    margin: auto;
+  }
+
+  .next-prev-chapter-container {
+    width: 70%;
+    margin: auto;
+  }
+}
+
+@media (min-width: $lg) {
+  #settings-and-chapter-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .font-settings-container {
+    height: 0;
+    position: sticky;
+    top: calc(2 * var(--reg-font-size));
+    bottom: calc(4 * var(--reg-font-size));
+    margin: {
+      left: calc(2 * var(--reg-font-size));
+    }
+  }
+
+  #font-settings {
+    display: flex;
+    position: relative;
+    width: 150px;
+    margin: 0;
+    left: 0;
+    top: 0;
+    background: none;
+
+    opacity: 0.1;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    .square {
+      flex: 1 1 30%;
+
+      button {
+        background: none;
+      }
+    }
+  }
+
+  .next-prev-chapter-container {
+    width: var(--text-width);
+  }
+
+  #chapter {
+    width: var(--text-width);
+
+    p {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@use "./breakpoints" as *;
+
+:root {
+  /**
+   * [Changeable Settings]
+   * These are meant for updating the font and
+   * background colour later in JavaScript.
+   */
+  --main-color: #415160;
+  --secondary-color: #fbfbf8;
+  --additional-color: #92928b;
+  --font-size: 1rem;
+  --line-height: 1.5rem;
+  --letter-spacing: 0rem;
+  --font-type: inherit;
+  --text-width: 100%;
+}
+
+@media (min-width: $lg) {
+  :root {
+    --text-width: 50%;
+  }
+}

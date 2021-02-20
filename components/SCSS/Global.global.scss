@@ -1,0 +1,63 @@
+/*
+ * name:            WP Book Theme
+ * desc:            A book theme for WordPress, that offers features for author and reader
+ * 
+ * Author:          Wiktoria Mielcarek (Braweria)
+ * Website:         https://braweria.de/
+ * Version:         BETA
+ * Copyright:       2021 Wiktoria Mielcarek (Braweria)
+ ? Licence:         GNU GPLv3
+ * Repository:      xxx
+ */
+
+@use "./variables/AllVariables.scss";
+
+* {
+  color: var(--ink-blue);
+}
+
+ul {
+  margin-top: 1rem;
+  margin-left: 2rem;
+
+  ul {
+    margin-left: 2rem;
+  }
+}
+
+.footnotes {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+  hr {
+    margin-bottom: 1rem;
+  }
+
+  ol {
+    margin-left: 2rem;
+
+    li {
+      margin: {
+        top: 10px;
+        bottom: 10px;
+      }
+    }
+  }
+}
+
+/**
+ * Changeable Classes
+ */
+
+.show-flex {
+  display: flex !important;
+}
+
+.show-block {
+  display: block !important;
+}
+
+*::selection {
+  background-color: var(--ink-blue);
+  color: var(--paper-white);
+}

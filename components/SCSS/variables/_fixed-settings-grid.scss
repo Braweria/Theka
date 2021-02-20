@@ -1,0 +1,17 @@
+@use "../variables/breakpoints" as *;
+
+:root {
+  /* [Grid Settings] */
+  --grid-margin: 26px;
+  --grid-gutters: 9px;
+  --grid-column: 74px;
+}
+
+@media (min-width: $md) {
+  :root {
+    /* [Grid Settings] */
+    --grid-margin: 40px;
+    --grid-gutters: 25px;
+    --grid-column: 74px;
+  }
+}

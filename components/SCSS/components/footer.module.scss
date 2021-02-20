@@ -1,0 +1,98 @@
+@use "../variables/breakpoints" as *;
+@use "../mixins/list-dir";
+
+.footer {
+  padding: var(--grid-margin);
+  background: var(--drk-paper-white);
+
+  nav {
+    ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      padding: 0 26px;
+
+      li {
+        list-style: none;
+        flex: 1 1 30%;
+        text-align: center;
+
+        a {
+          color: var(--ink-blue);
+          text-decoration: none;
+          font-size: var(--reg-font-size);
+          padding: 20px 0;
+
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+      }
+    }
+
+    @include list-dir.top-down;
+  }
+
+  .footer-navbar {
+    ul {
+      flex: 1 1 30%;
+      li {
+        a {
+          margin: {
+            bottom: 1em;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-important-navbar {
+    margin: {
+      top: 3em;
+    }
+
+    a {
+      font-size: var(--sm-font-size);
+    }
+  }
+
+  .copyright-notice {
+    font-size: var(--xs-font-size);
+    text-align: center;
+    width: 50%;
+    margin: auto;
+  }
+}
+
+@media (min-width: $sm) {
+  .footer {
+    .footer-navbar {
+      display: flex;
+      flex-direction: row;
+
+      ul {
+        height: 100%;
+      }
+    }
+
+    .copyright-notice {
+      width: 100%;
+      text-align: left;
+    }
+  }
+}
+
+@media (min-width: $md) {
+  .footer {
+    .footer-navbar {
+      display: flex;
+      flex-direction: row;
+
+      ul {
+        height: 100%;
+      }
+    }
+  }
+}
